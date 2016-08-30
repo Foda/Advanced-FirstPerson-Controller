@@ -1,0 +1,13 @@
+Info
+Thanks for buying the Advanced FirstPerson Controller unity asset, if you find any bugs/ need some help or want to suggest a feature please contact me at : t4.gam3s@gmail.com . this asset provides a first person character controller, with some pretty neat functionality such as :
+jumping,sprinting, crouching, proning, sliding, leaning and more all fully customizable to match any game situation
+
+Deployment
+The asset is provided in the shape of two prefabs a player and a mobile player prefab, with a FirstPersonController component attached to both, each prefab needs an input module script, this scrip is used to provide input to the CharacterController component, two input modules are provided for the keyboard/mouse and touch screen devices, any further needed input modules can be easily added using the two provided modules as examples, the FirstPersonController component contains many fields that can be changed to fit any game needs
+crouching, proning, sprinting are implemented as a CharacterState class, this class defines the desired CharacterState Behaviour : character height and radius, movement speed, changeDelta (how fast the height and radius change), speedDelta (how fast the controller's current speed changes to the desired speed), stepInterval (the ammount of time between making stepping sounds)
+the character controller is made sure not to overlap geometry when changing from a smaller CharacterState to a bigger CharacterState by detecting if we hit anything while changing state, there are two ways to detect this, implemented in the headHitDetect enum, choosing full will make sure the area above the player is enough for him to stand up, choosing part will only detect the above geometry using the headHitCheckDistance variable as the character changes state, if the character hits any thing in its transition it automatically goes to the most suitable state
+
+Usability
+The FirstPersonController component contains many getters and to recieve the characters current state : OnGround, Jumping, Crouching, Sliding, Leaning, ... etc , the component also contains many events such as : OnCharacterJumped(), OnCharacterLanded(float distanceTraveld, float distanceFell), OnCharacterStateChanged(State newState) , .... etc,
+the asset also contains the FPBaseInput Component, this component is meant to be inherited from and then used as the base for input events by overriding its functions, this is showcased in the FPKeyBoardInput and the FPTouchInput scripts
+the asset contains many restrictions variables, canMove, canLook, canSlide, canJump, ... etc , these variables can be changed via scripts to fit different situations

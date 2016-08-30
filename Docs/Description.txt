@@ -1,0 +1,3 @@
+The Advanced FirstPerson Controller Asset provides an easy to use and extend first person controller along with some nice features including :
+sprinting, jumping, crouching, proning, leaning, sliding and more, the asset is easy to use and contains an easy to extend input system using modules, two modules for keyboard/mouse and touch screen are included within
+the character controller contains many variables to change that can make the asset fit any game need, all the way up from custom height for different character states (crouch, prone, ...) all the way to slide camera look reset method.
